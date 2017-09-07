@@ -1,0 +1,77 @@
+.Header {
+
+	&-inner {
+		width: 1140px;
+		margin: 0 auto;
+		padding: 40px 0px;
+		position: relative;
+	}
+
+	&-logo {
+		max-width: 100%;
+		width: 250px;
+		display: inline-block;
+	}
+
+	&-nav {
+		display: inline-block;
+		height: 40px;
+		vertical-align: top;
+		position: absolute;
+		right: 0;
+
+		a {
+			text-decoration: none;
+			font-size: 20px;
+			text-transform: uppercase;
+			padding: 8px 12px;
+			margin-left: 27px;
+			background: transparent;
+			font-weight: 400;
+			letter-spacing: 1.5px;
+			color: $black;
+			display: inline-block;
+			position: relative;
+			overflow: hidden;
+			transition: $animation-300;
+			-webkit-transition: $animation-300;
+
+			&:after {
+				content: "";
+				height: 100%;
+				width: 0px;
+				position: absolute;
+				background: $black;
+				left: 0px;
+				top: 0px;
+				z-index: -1;
+				transition: $animation-300;
+				-webkit-transition: $animation-300;
+			}
+
+			&:hover {
+				color: #fff;
+				&:after {
+					width: 100%;
+				}
+			}
+
+			&.highlight {
+				color: $white;
+
+				&:after {
+					width: 100%;
+					right: 0px;
+				}
+				
+				&:hover {
+					color: #000;
+					&:after {
+						left: 100%;
+					}
+				}
+			}
+
+		}
+	}
+}
