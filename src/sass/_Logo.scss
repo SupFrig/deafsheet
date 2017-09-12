@@ -1,0 +1,227 @@
+
+
+.Logo {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  z-index: 2;
+  overflow: hidden;
+  background-size: 70%;
+  
+  &-container {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    border: 10px solid rgba(0,0,0,.5);
+    overflow: hidden;
+    zoom: .5;
+    display: inline-block;
+  }
+  
+  &-bg {
+    background: url(img/skin/white-hand.jpg) no-repeat;
+    background-size: 500px;
+    position: absolute;
+    left: 39px;
+    top: 11px;
+    z-index: 1;
+    width: 500px;
+    height: 500px;
+  }
+  
+  img {
+    position: absolute;
+    display: block;
+    height: 71px;
+  }
+  .one {
+    top: 215px;
+    left: 190px;
+    transform: scale(0);
+    -webkit-animation: translation-right 1s infinite;
+  }
+  
+  .two {
+    transform: rotate(45deg) scale(0);
+    top: 215px;
+    left: 190px;
+    -webkit-animation: translation-bottom-right 1s infinite;
+  }
+  
+  .three {
+    transform: rotate(90deg) scale(0);
+    top: 215px;
+    left: 190px;
+    -webkit-animation: translation-bottom 1s infinite;
+  }
+  
+  .four {
+    transform: rotate(135deg);
+    top: 215px;
+    left: 190px;
+    -webkit-animation: translation-bottom-left 1s infinite;
+  }
+  .five {
+    transform: rotate(180deg) scale(0);
+    top: 215px;
+    left: 190px;
+    -webkit-animation: translation-left 1s infinite;
+  }
+  .six {
+    transform: rotate(225deg);
+    top: 215px;
+    left: 190px;
+    -webkit-animation: translation-top-left 1s infinite;
+  }
+  .seven {
+    transform: rotate(270deg) scale(0);
+    top: 215px;
+    left: 185px;
+    -webkit-animation: translation-top 1s infinite;
+  }
+  .eight {
+    transform: rotate(315deg) scale(0);
+    top: 215px;
+    left: 190px;
+    -webkit-animation: translation-top-right 1s infinite;
+  }
+}
+
+@keyframes translation-top-left {
+  0%   {     
+    top: 215px;
+    left: 190px;
+    transform:rotate(225deg) scale(0);
+  }
+  100% {
+    top: -100px;
+    left: -130px;
+    transform:rotate(225deg) scale(1);
+  }
+}
+
+@keyframes translation-top {
+  0%   {     
+    top: 215px;
+    left: 185px;
+    transform: rotate(270deg) scale(0);
+  }
+  10%   {     
+    top: 215px;
+    left: 185px;
+    transform: rotate(270deg) scale(0);
+  }
+  100% {
+    top: -110px;
+    left: 185px;
+    transform: rotate(270deg) scale(1);
+  }
+}
+
+@keyframes translation-top-right {
+  0%   {     
+    top: 215px;
+    left: 190px;
+    transform: rotate(315deg) scale(0);
+  }
+  20%   {     
+    top: 215px;
+    left: 190px;
+    transform: rotate(315deg) scale(0);
+  }
+  100% {
+    top: -100px;
+    left: 490px;
+    transform: rotate(315deg) scale(1);
+  }
+}
+
+@keyframes translation-right {
+  0%   {     
+    top: 215px;
+    left: 190px;
+    transform: scale(0);
+  }
+  30%   {     
+    top: 215px;
+    left: 190px;
+    transform: scale(0);
+  }
+  100% {
+    top: 215px;
+    left: 505px;
+    transform: scale(1);
+  }
+}
+
+@keyframes translation-bottom-right {
+  0%   {     
+    top: 215px;
+    left: 190px;
+    transform: rotate(45deg) scale(0);
+  }
+  40%   {     
+    top: 215px;
+    left: 190px;
+    transform: rotate(45deg) scale(0);
+  }
+  100% {
+    top: 520px;
+    left: 500px;
+    transform: rotate(45deg) scale(1);
+  }
+}
+
+@keyframes translation-bottom {
+  0%   {     
+    top: 215px;
+    left: 190px;
+    transform: rotate(90deg) scale(0);
+  }
+  50%   {     
+    top: 215px;
+    left: 190px;
+    transform: rotate(90deg) scale(0);
+  }
+  100% {
+    top: 540px;
+    left: 190px;
+    transform: rotate(90deg) scale(1);
+  }
+}
+
+@keyframes translation-bottom-left {
+  0%   {     
+    top: 215px;
+    left: 190px;
+    transform: rotate(135deg) scale(0);
+  }
+  60%   {     
+    top: 215px;
+    left: 190px;
+    transform: rotate(135deg) scale(0);
+  }
+  100% {
+    top: 520px;
+    left: -120px;
+    transform: rotate(135deg) scale(1);
+  }
+}
+
+@keyframes translation-left {
+  0%   {     
+    top: 215px;
+    left: 190px;
+    transform: rotate(180deg) scale(0);
+  }
+  70%   {     
+    top: 215px;
+    left: 190px;
+    transform: rotate(180deg) scale(0);
+  }
+  100% {
+    top: 215px;
+    left: -130px;
+    transform: rotate(180deg) scale(1);
+  }
+}

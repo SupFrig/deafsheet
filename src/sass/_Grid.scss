@@ -5,6 +5,10 @@
 		width: 1140px;
 		margin: 0 auto;
 		padding-top: 80px;
+
+		@media screen and (max-width: 1140px) {
+			width: 100%;
+		}
 	}
 
 	&-title {
@@ -37,6 +41,15 @@
 		padding-right: 32px;
 		float: left;
 
+		@media screen and (max-width: 1140px) {
+			body .Grid .Grid-block & {
+				width: 48%;
+				margin: 1%;
+				padding: 0;
+				height: 30vh;
+			}
+		}
+
 		.Grid-block &:nth-child(2){
 			width: 747px;
 			padding-right: 0px;
@@ -66,11 +79,13 @@
 
 			img {
 				max-width: 100%;
+				max-height: 100%;
 				position: relative;
 				top: 50%;
-				-webkit-transform: translateY(-50%);
-				-ms-transform: translateY(-50%);
-				transform: translateY(-50%);
+				left: 50%;
+				-webkit-transform: translate(-50%,-50%);
+				-ms-transform: translate(-50%,-50%);
+				transform: translate(-50%,-50%);
 			}
 		}
 	}

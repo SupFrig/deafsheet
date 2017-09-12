@@ -4,8 +4,13 @@ import Isotope from 'isotope-layout';
 import packery from 'isotope-packery';
 import './App.scss';
 import eyeman from './img/data/bigeyeman.jpg';
+import animatedLogoEye from './img/skin/eye.png';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    console.log('constructor');
+  }
   render() {
     return (
       <div className="Container">
@@ -14,6 +19,9 @@ class App extends Component {
         <Grid/>
       </div>
     );
+  }
+  componentDidMount() {
+    console.log('componentDidMount');
   }
 }
 
@@ -35,11 +43,32 @@ class Header extends Component {
   }
 }
 
+class AnimatedLogo extends Component {
+  render() {
+    return (
+      <div className="Logo-container">
+        <div className="Logo">
+          <img className="one" src={animatedLogoEye}/>
+          <img className="two" src={animatedLogoEye}/>
+          <img className="three" src={animatedLogoEye}/>
+          <img className="four" src={animatedLogoEye}/>
+          <img className="five" src={animatedLogoEye}/>
+          <img className="six" src={animatedLogoEye}/>
+          <img className="seven" src={animatedLogoEye}/>
+          <img className="eight" src={animatedLogoEye}/>
+        </div>
+        <div className="Logo-bg"></div>
+      </div>
+    );
+  }
+}
+
 class Disclaimer extends Component {
   render() {
     return (
       <div className="Disclaimer">
         <div className="Disclaimer-inner">
+          <AnimatedLogo/>
           <p>{this.props.text}</p>
         </div>
       </div>
@@ -64,10 +93,10 @@ class Grid extends Component {
           <div className="Grid-container">
             <div className="Grid-block">
               <div className="Grid-item"><div className="Grid-item-inner"><img src={eyeman}/></div></div>
-              <div className="Grid-item"><div className="Grid-item-inner"></div></div>
-              <div className="Grid-item"><div className="Grid-item-inner"></div></div>
-              <div className="Grid-item"><div className="Grid-item-inner"></div></div>
-              <div className="Grid-item"><div className="Grid-item-inner"></div></div>
+              <div className="Grid-item"><div className="Grid-item-inner"><img src={eyeman}/></div></div>
+              <div className="Grid-item"><div className="Grid-item-inner"><img src={eyeman}/></div></div>
+              <div className="Grid-item"><div className="Grid-item-inner"><img src={eyeman}/></div></div>
+              <div className="Grid-item"><div className="Grid-item-inner"><img src={eyeman}/></div></div>
             </div>
             <div className="Grid-block">
               <div className="Grid-item"><div className="Grid-item-inner"></div></div>
