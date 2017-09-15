@@ -46,7 +46,7 @@
 				width: 48%;
 				margin: 1%;
 				padding: 0;
-				height: 30vh;
+				height: auto;
 			}
 		}
 
@@ -87,6 +87,31 @@
 				-ms-transform: translate(-50%,-50%);
 				transform: translate(-50%,-50%);
 			}
+		}
+	}
+
+	&-btn {
+		&-container {
+			text-align: center;
+		}
+
+		&-readmore {
+			text-decoration: none;
+			font-size: 20px;
+			text-transform: uppercase;
+			padding: 8px 12px;
+			margin-left: 27px;
+			background: $black;
+			font-weight: 400;
+			letter-spacing: 1.5px;
+			color: $white;
+			display: inline-block;
+			position: relative;
+			overflow: hidden;
+			transition: all 0.3s ease-in;
+			-webkit-transition: all 0.3s ease-in;
+			margin: 0 auto;
+			cursor: pointer
 		}
 	}
 }

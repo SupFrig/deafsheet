@@ -9,12 +9,19 @@ import animatedLogoEye from './img/skin/eye.png';
 class App extends Component {
   constructor(props){
     super(props);
-    console.log('constructor');
+    this.state = {
+      links: [
+        {'id':1,'title':'Baby','url':'/baby'},
+        {'id':2,'title':'Surréel oculaire','url':'/eyes'},
+        {'id':3,'title':'Insectes','url':'/bugs'},
+        {'id':4,'title':'Contact','url':'/contact','cssClass':'highlight'}
+      ]
+    }
   }
   render() {
     return (
       <div className="Container">
-        <Header title="Deafsheet"/>
+        <Header links={this.state.links} title="Deafsheet"/>
         <Disclaimer text="Sur ce site il y a des dessins. Vous pouvez les regarder, les partager, les colorier (après impression) et les utiliser comme bon vous semble.  Si vous me laissez un petit merci c'est plus gentil :)"/>
         <Grid/>
       </div>
@@ -25,6 +32,34 @@ class App extends Component {
   }
 }
 
+class HeaderLink extends Component {
+  constructor(props){
+    super(props);
+    this.clickEvent = this.clickEvent.bind(this);
+  }
+
+  clickEvent(e) {
+    
+    e.preventDefault();
+    console.log(this);
+    this.clickAnimation();
+  }
+
+  clickAnimation() {
+    console.log('animate');
+  }
+
+  render () {
+    var link = this.props.link;
+    var cssClassString = null;
+    if(typeof link.cssClass !== 'undefined'){
+      cssClassString = link.cssClass;
+    }
+    return (
+      <a key={link.id} className={cssClassString} onClick={this.clickEvent} href={link.url}>{link.title}</a>
+    );
+  }
+}
 class Header extends Component {
   render() {
     return (
@@ -32,10 +67,12 @@ class Header extends Component {
         <div className="Header-inner">
         	<img className="Header-logo" alt={this.props.title} src={logo}/>
         	<nav className="Header-nav">
-        	  <a href="#">Baby</a>
-        	  <a href="#">Surréel oculaire</a>
-        	  <a href="#">Insectes</a>
-        	  <a className="highlight" href="#">contact</a>
+        	  {this.props.links.map(function(link) {
+              console.log(link);
+                return (
+                    <HeaderLink link={link} />
+                );
+            })}
         	</nav>
         </div>
       </div>
@@ -84,6 +121,11 @@ class Grid extends Component {
       isotope: null
     }
   }
+
+  loadMore(e) {
+    e.preventDefault();
+    console.log('loadmore');
+  }
 	render() {
     var children = this.props.children;
     return (
@@ -98,15 +140,11 @@ class Grid extends Component {
               <div className="Grid-item"><div className="Grid-item-inner"><img src={eyeman}/></div></div>
               <div className="Grid-item"><div className="Grid-item-inner"><img src={eyeman}/></div></div>
             </div>
-            <div className="Grid-block">
-              <div className="Grid-item"><div className="Grid-item-inner"></div></div>
-              <div className="Grid-item"><div className="Grid-item-inner"></div></div>
-              <div className="Grid-item"><div className="Grid-item-inner"></div></div>
-              <div className="Grid-item"><div className="Grid-item-inner"></div></div>
-              <div className="Grid-item"><div className="Grid-item-inner"></div></div>
-            </div>
           </div>
-	      </div>
+          <div className="Grid-btn-container">
+            <a className="Grid-btn-readmore" onClick={this.loadMore} >+ de dessins</a>
+          </div>
+        </div>
       </div>
     );
   }
