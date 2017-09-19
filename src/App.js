@@ -27,12 +27,11 @@ class App extends Component {
         {'id':2,'title':'A propos','url':'/about'}
       ],
       gridItems: [
-        {'id':1,'title':'Homme oeil','url':'/img/data/bigeyeman.jpg'},
-        {'id':2,'title':'Homme oeil','url':'/img/data/bigeyeman.jpg'},
-        {'id':3,'title':'Homme oeil','url':'/img/data/bigeyeman.jpg'},
-        {'id':4,'title':'Homme oeil','url':'/img/data/bigeyeman.jpg'},
-        {'id':5,'title':'Homme oeil','url':'/img/data/bigeyeman.jpg'},
-        {'id':6,'title':'Homme oeil','url':'/img/data/bigeyeman.jpg'},
+        {'id':1,'title':'Homme oeil','url':'./img/data/bigeyeman.jpg'},
+        {'id':2,'title':'Homme oeil','url':'./img/data/bigeyeman.jpg'},
+        {'id':3,'title':'Homme oeil','url':'./img/data/bigeyeman.jpg'},
+        {'id':4,'title':'Homme oeil','url':'./img/data/bigeyeman.jpg'},
+        {'id':5,'title':'Homme oeil','url':'./img/data/bigeyeman.jpg'}
       ]
     }
 
@@ -72,7 +71,6 @@ class App extends Component {
      });
   }
   render() {
-    console.log(this.state.sticky);
     var classes = 'Container'+ ((this.state.sticky) ? ' sticky' : '');
     return (
       <div className={classes}>
@@ -134,18 +132,19 @@ class Grid extends Component {
     console.log('loadmore');
   }
   render() {
-    var children = this.props.children;
+
     return (
       <div className="Grid animateSection">
         <div className="Grid-inner">
           <h2 className="Grid-title">Les <span className="Grid-title--highlight"> dessins</span></h2>
           <div className="Grid-container">
             <div className="Grid-block">
-              <div className="Grid-item"><div className="Grid-item-inner"><img alt="Eye" src={eyeman}/></div></div>
-              <div className="Grid-item"><div className="Grid-item-inner"><img alt="Eye" src={eyeman}/></div></div>
-              <div className="Grid-item"><div className="Grid-item-inner"><img alt="Eye" src={eyeman}/></div></div>
-              <div className="Grid-item"><div className="Grid-item-inner"><img alt="Eye" src={eyeman}/></div></div>
-              <div className="Grid-item"><div className="Grid-item-inner"><img alt="Eye" src={eyeman}/></div></div>
+              {this.props.items.map(function(item) {
+                  console.log(item);
+                  return (
+                      <div className="Grid-item"><div className="Grid-item-inner"><img alt="Eye" src=""/></div></div>
+                  );
+              })}
             </div>
           </div>
           <div className="Grid-btn-container">
