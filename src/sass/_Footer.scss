@@ -1,0 +1,46 @@
+.Footer {
+	height: 120px;
+	background: $black;
+
+	&-inner{
+		width: 1140px;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	&-link {
+		color: $white;
+		text-decoration: none;
+		font-size: 22px;
+		display: inline-block;
+		position: relative;
+		margin-top: 46px;
+		span {
+			display: inline-block;
+			height: 31px;
+			position: relative;
+
+			&:before {
+				content: "";
+				width: 0px;
+				height: 2px;
+				display: block;
+				position: absolute;
+				bottom: 2px;
+				background: $white;
+				transition: $animation-300;
+				-webkit-transition: $animation-300;
+			}
+		}
+		&:hover {
+			& span:before {
+				width: 100%;
+			}
+		}
+
+		&:not(:last-child):after {
+			content: " - ";
+			white-space: pre;
+		}
+	}
+}
