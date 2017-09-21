@@ -33,7 +33,7 @@ class Footer extends Component {
         	<nav className="Footer-nav">
         	  {this.props.links.map(function(link) {
                 return (
-                    <FooterLink link={link} />
+                    <FooterLink key={link.id} link={link} />
                 );
             })}
         	</nav>

@@ -1,12 +1,21 @@
 .Header {
 	transition: $animation-300;
 	-webkit-transition: $animation-300;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
 
 	&-inner {
 		width: 1140px;
 		margin: 0 auto;
 		padding: 40px 0px;
 		position: relative;
+
+		@media screen and (max-width: $desktop-bp) {
+			width: 100%;
+			padding: 40px 1%;
+		}
 	}
 
 	&-logo {
@@ -19,22 +28,33 @@
 
 	&-nav {
 		display: inline-block;
-		height: 40px;
+		min-height: 40px;
 		vertical-align: top;
 		position: absolute;
 		right: 0;
+
+		@media screen and (max-width: 960px) {
+			position: static;
+
+			.Btn {
+				margin-left: 0px;
+			}
+		}
 	}
 
 	.sticky &{
 		background: $black;
-		position: fixed;
-		top: 0px;
-		left: 0px;
-		width: 100%;
+		
 		z-index: 3;
 
 		.Btn {
 			color: $white;
+
+			&:hover {
+				span {
+					color: $black;
+				}
+			}
 		}
 	}
 }

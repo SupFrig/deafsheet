@@ -7,7 +7,6 @@
 	background: transparent;
 	font-weight: 400;
 	letter-spacing: 1.5px;
-	color: $black;
 	display: inline-block;
 	position: relative;
 	overflow: hidden;
@@ -17,6 +16,9 @@
 	span {
 		z-index: 1;
 		position: relative;
+		transition: $animation-300;
+		-webkit-transition: $animation-300;
+		color: $black;
 	}
 
 	&:after {
@@ -33,14 +35,19 @@
 	}
 
 	&:hover {
-		color: #fff;
+		span {
+			color: #fff;
+		}
+
 		&:after {
 			width: 100%;
 		}
 	}
 
 	&.highlight {
-		color: $white;
+		span {
+			color: $white;
+		}
 
 		&:after {
 			width: 100%;
@@ -48,7 +55,10 @@
 		}
 		
 		&:hover {
-			color: #000;
+			span {
+				color: #000;
+			}
+			
 			&:after {
 				left: 100%;
 			}

@@ -43,7 +43,7 @@ class Header extends Component {
         	<nav className="Header-nav">
         	  {this.props.links.map(function(link) {
                 return (
-                    <HeaderLink link={link} />
+                    <HeaderLink key={link.id} link={link} />
                 );
             })}
         	</nav>

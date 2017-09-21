@@ -27,11 +27,11 @@ class App extends Component {
         {'id':2,'title':'A propos','url':'/about'}
       ],
       gridItems: [
-        {'id':1,'title':'Homme oeil','url':'./img/data/bigeyeman.jpg'},
-        {'id':2,'title':'Homme oeil','url':'./img/data/bigeyeman.jpg'},
-        {'id':3,'title':'Homme oeil','url':'./img/data/bigeyeman.jpg'},
-        {'id':4,'title':'Homme oeil','url':'./img/data/bigeyeman.jpg'},
-        {'id':5,'title':'Homme oeil','url':'./img/data/bigeyeman.jpg'}
+        {'id':1,'title':'Homme oeil','url':'bigeyeman.jpg'},
+        {'id':2,'title':'Homme oeil','url':'bigeyeman.jpg'},
+        {'id':3,'title':'Homme oeil','url':'bigeyeman.jpg'},
+        {'id':4,'title':'Homme oeil','url':'bigeyeman.jpg'},
+        {'id':5,'title':'Homme oeil','url':'bigeyeman.jpg'}
       ]
     }
 
@@ -52,7 +52,6 @@ class App extends Component {
     var docHeight = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
     var value = document.body.scrollTop;
 
-    console.log(value);
     if(value > 20){
       this.setState({'sticky': true});
     }else{
@@ -121,18 +120,19 @@ class Disclaimer extends Component {
 class Grid extends Component {
   constructor(props){
     super(props);
+    
     this.state = {
       container: '.Grid-container',
-      isotope: null
+      isotope: null,
+      ajaxUrl: '',
+      loadIterations: 0
     }
   }
 
   loadMore(e) {
     e.preventDefault();
-    console.log('loadmore');
   }
   render() {
-
     return (
       <div className="Grid animateSection">
         <div className="Grid-inner">
@@ -140,9 +140,9 @@ class Grid extends Component {
           <div className="Grid-container">
             <div className="Grid-block">
               {this.props.items.map(function(item) {
-                  console.log(item);
+                  const imageUrl = require('./img/data/'+item.url);
                   return (
-                      <div className="Grid-item"><div className="Grid-item-inner"><img alt="Eye" src=""/></div></div>
+                      <div key={item.id} className="Grid-item"><div className="Grid-item-inner"><img alt="Eye" src={imageUrl}/></div></div>
                   );
               })}
             </div>

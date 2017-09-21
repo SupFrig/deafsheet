@@ -6,7 +6,7 @@
 		margin: 0 auto;
 		padding-top: 80px;
 
-		@media screen and (max-width: 1140px) {
+		@media screen and (max-width: $desktop-bp) {
 			width: 100%;
 		}
 	}
@@ -41,7 +41,7 @@
 		padding-right: 32px;
 		float: left;
 
-		@media screen and (max-width: 1140px) {
+		@media screen and (max-width: $desktop-bp) {
 			body .Grid .Grid-block & {
 				width: 48%;
 				margin: 1%;
