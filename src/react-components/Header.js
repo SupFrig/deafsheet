@@ -10,9 +10,9 @@ class HeaderLink extends Component {
 
   clickEvent(e) {
     
-    e.preventDefault();
+    //e.preventDefault();
     
-    this.clickAnimation();
+    //this.clickAnimation();
   }
 
   clickAnimation() {
