@@ -34,7 +34,6 @@ class App extends Component {
         {'id':4,'caption':'Chasseur d\'insectes','src': require('./img/data/insect_hunter.jpg')},
         {'id':5,'caption':'Le monstre du mur','src': require('./img/data/wall_monster.jpg')}
       ],
-      gridsJsonUrl: '/getImages.php',
       currentImage: 0,
       lightboxIsOpen: false
     }
@@ -45,17 +44,31 @@ class App extends Component {
     this.gotoPrevLightboxImage = this.gotoPrevLightboxImage.bind(this);
     this.gotoNextLightboxImage = this.gotoNextLightboxImage.bind(this);
     this.handleHash = this.handleHash.bind(this);
+    this.updateGridItems = this.updateGridItems.bind(this);
   }
 
   handleHash () {
     var hash = window.location.hash.replace('#','');
     console.log('current hash',hash);
 
-    switch(hash){
-      case 'baby':
+    this.updateGridItems(hash,5);
 
-      break;
+    
+  }
+
+  updateGridItems(slug, number) {
+    if(typeof number === 'undefined'){
+      var number = 5;
     }
+
+    fetch('/getImages.php?offset=0&count='+number+'&category='+slug).then(function(response){
+        return response.json();
+    }).then(data => {
+      console.log(data);
+      this.setState({
+          gridItems: data
+      })
+    })
   }
 
   componentDidMount(){
@@ -248,6 +261,7 @@ class Grid extends Component {
     );
   }
   componentDidMount() {
+    console.log(this.state.isotope);
     if(!this.state.isotope) {
         this.setState({
             isotope: new Isotope(
