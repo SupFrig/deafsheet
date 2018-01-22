@@ -9,7 +9,7 @@ import Footer from './react-components/Footer'
 
 import './App.scss';
 
-import eyeman from './img/data/bigeyeman.jpg';
+import eyeman from './img/data/thumbs/bigeyeman.jpg';
 import animatedLogoEye from './img/skin/eye.png';
 
 class App extends Component {
@@ -21,21 +21,93 @@ class App extends Component {
         {'id':1,'title':'Baby','url':'/#baby'},
         {'id':2,'title':'Surréel oculaire','url':'/#eyes'},
         {'id':3,'title':'Insectes','url':'/#bugs'},
-        {'id':4,'title':'Contact','url':'/#contact','cssClass':'highlight'}
+        {'id':4,'title':'Le reste','url':'/#others','cssClass':'highlight'}
       ],
       footerLinks: [
         {'id':1,'title':'Mentions légales','url':'/legals'},
         {'id':2,'title':'A propos','url':'/about'}
       ],
       gridItems: [
-        {'id':1,'caption':'Homme oeil','src': require('./img/data/bigeyeman.jpg')},
-        {'id':2,'caption':'Blougiboulga','src': require('./img/data/weirdstuff.jpg')},
-        {'id':3,'caption':'Papa oeil','src': require('./img/data/shadow_sketch.jpg')},
-        {'id':4,'caption':'Chasseur d\'insectes','src': require('./img/data/insect_hunter.jpg')},
-        {'id':5,'caption':'Le monstre du mur','src': require('./img/data/wall_monster.jpg')}
+        {'id':1,'caption':'Homme oeil','src': require('./img/data/thumbs/bigeyeman.jpg')},
+        {'id':2,'caption':'Blougiboulga','src': require('./img/data/thumbs/weirdstuff.jpg')},
+        {'id':3,'caption':'Papa oeil','src': require('./img/data/thumbs/shadow_sketch.jpg')},
+        {'id':4,'caption':'Chasseur d\'insectes','src': require('./img/data/thumbs/insect_hunter.jpg')},
+        {'id':5,'caption':'Le monstre du mur','src': require('./img/data/thumbs/wall_monster.jpg')}
       ],
+      imagesData: {
+        'bugs': [
+          {'id':1,'caption':'Libellule mimique fleur','src': require('./img/data/thumbs/dragonfly.jpg')},
+          {'id':2,'caption':'Chasseur d\'insectes','src': require('./img/data/thumbs/insect_hunter.jpg')},
+          {'id':3,'caption':'Chasseur d\'insectes avec sa larve de compagnie','src': require('./img/data/thumbs/insect_hunter_mask_out.jpg')},
+          {'id':4,'caption':'Mite géante de combat','src': require('./img/data/thumbs/mite.jpg')},
+          {'id':5,'caption':'Unité biologique de transport','src': require('./img/data/thumbs/mobile_storage.jpg')},
+          {'id':6,'caption':'Unité de combat (Sauterelle réaménagée)','src': require('./img/data/thumbs/sauterelle.jpg')},
+          {'id':7,'caption':'Unité de combat (Araignée améliorée)','src': require('./img/data/thumbs/spider.jpg')},
+          {'id':8,'caption':'Vrombon sauvage','src': require('./img/data/thumbs/vrombon.jpg')},
+          {'id':9,'caption':'Scarabée mécanique','src': require('./img/data/thumbs/scarab.jpg')},
+          {'id':10,'caption':'Nausicäa Tribute','src': require('./img/data/thumbs/nausicaa.jpg')}
+        ],
+        'eyes': [
+          {'id':1,'caption':'Bras de fer','src': require('./img/data/thumbs/alienarmwrestling.jpg')},
+          {'id':2,'caption':'Space Skate','src': require('./img/data/thumbs/alienskate.jpg')},
+          {'id':3,'caption':'Space Skate 2','src': require('./img/data/thumbs/alienskatepark.jpg')},
+          {'id':4,'caption':'Space Dance','src': require('./img/data/thumbs/dancing_alien.jpg')},
+          {'id':5,'caption':'Residents tribute','src': require('./img/data/thumbs/bigeyeman.jpg')},
+          {'id':6,'caption':'Mauvais Oeil','src': require('./img/data/thumbs/black_eyed.jpg')},
+          {'id':7,'caption':'Bowie tribute','src': require('./img/data/thumbs/bowie-eye.jpg')},
+          {'id':8,'caption':'Oeil de contrebande','src': require('./img/data/thumbs/eyes_undercover.jpg')},
+          {'id':9,'caption':'Araignoeil','src': require('./img/data/thumbs/eyespider.jpg')},
+          {'id':10,'caption':'Monsieur Oeil : Chute','src': require('./img/data/thumbs/freefall.jpg')},
+          {'id':11,'caption':'Monsieur Oeil : Not a tribute','src': require('./img/data/thumbs/jul_ovni.jpg')},
+          {'id':12,'caption':'Monsieur Oeil : Voyage en avion','src': require('./img/data/thumbs/plane.jpg')},
+          {'id':13,'caption':'Mandaloeil','src': require('./img/data/thumbs/mandala.jpg')},
+          {'id':14,'caption':'Kirby Tribute','src': require('./img/data/thumbs/mreye_kirby.jpg')},
+          {'id':15,'caption':'Attraper','src': require('./img/data/thumbs/mreye_shadow.jpg')},
+          {'id':16,'caption':'Jeux divins','src': require('./img/data/thumbs/shadow_sketch.jpg')},
+          {'id':17,'caption':'Sprotch','src': require('./img/data/thumbs/sprotch.jpg')},
+          {'id':18,'caption':'Langage des cordes','src': require('./img/data/thumbs/string_talking.jpg')},
+          {'id':19,'caption':'Le trône du roi idiot','src': require('./img/data/thumbs/throne.jpg')},
+          {'id':20,'caption':'Détective troisyeux','src': require('./img/data/thumbs/troizyeux.jpg')},
+          {'id':21,'caption':'Le voile de la réalité','src': require('./img/data/thumbs/warp.jpg')},
+          {'id':22,'caption':'Horrible Hypnose','src': require('./img/data/thumbs/weirdstuff.jpg')}
+        ],
+        'baby': [
+          {'id':1,'caption':'Kirby Tribute','src': require('./img/data/thumbs/baby_kirby.jpg')},
+          {'id':2,'caption':'Le concert','src': require('./img/data/thumbs/baby_live.jpg')},
+          {'id':3,'caption':'Surf sur la mer de vomi','src': require('./img/data/thumbs/baby_surf.jpg')},
+          {'id':4,'caption':'Baby Stark','src': require('./img/data/thumbs/got_baby.jpg')},
+          {'id':5,'caption':'Baby Driver','src': require('./img/data/thumbs/baby_driver.jpg')},
+          {'id':6,'caption':'Le petit bébé dans la prairie','src': require('./img/data/thumbs/baby_ingalls.jpg')},
+          {'id':7,'caption':'Bébé = joie','src': require('./img/data/thumbs/hellbaby.jpg')},
+          {'id':8,'caption':'Bébé psychédélique','src': require('./img/data/thumbs/psyche_baby.jpg')},
+          {'id':9,'caption':'Puke my TV','src': require('./img/data/thumbs/puke_my_TV.jpg')},
+          {'id':10,'caption':'Bébé réaliste','src': require('./img/data/thumbs/realbaby.jpg')},
+          {'id':11,'caption':'Les adieux de bébé','src': require('./img/data/thumbs/bye_baby.jpg')}
+        ],
+        'others': [
+          {'id':1,'caption':'Combat Abyssal','src': require('./img/data/thumbs/abyss_fight.jpg')},
+          {'id':2,'caption':'Le monstre du coin','src': require('./img/data/thumbs/corner_monster.jpg')},
+          {'id':3,'caption':'Cthulhu','src': require('./img/data/thumbs/cthulhu.jpg')},
+          {'id':4,'caption':'Onde de choc','src': require('./img/data/thumbs/headshot.jpg')},
+          {'id':5,'caption':'Angoisse moderne','src': require('./img/data/thumbs/psyche.jpg')},
+          {'id':6,'caption':'Jeux de garçons','src': require('./img/data/thumbs/jeuxdegarcons.jpg')},
+          {'id':7,'caption':'Fuite','src': require('./img/data/thumbs/kaibalike.jpg')},
+          {'id':8,'caption':'Combattant de rue','src': require('./img/data/thumbs/kung_fu_sdf.jpg')},
+          {'id':9,'caption':'Le bateau perdu','src': require('./img/data/thumbs/lost_ship.jpg')},
+          {'id':10,'caption':'Vision altérée','src': require('./img/data/thumbs/minimal_mob.jpg')},
+          {'id':11,'caption':'Autoportrait','src': require('./img/data/thumbs/minimal_selfportrait.jpg')},
+          {'id':12,'caption':'Totojaws','src': require('./img/data/thumbs/rawr.jpg')},
+          {'id':13,'caption':'Monstre marin','src': require('./img/data/thumbs/sea_monster.jpg')},
+          {'id':14,'caption':'Horreur shampooinesque','src': require('./img/data/thumbs/shampoo_horror.jpg')},
+          {'id':15,'caption':'Yoga shampoo','src': require('./img/data/thumbs/yoga_shampoo.jpg')},
+          {'id':16,'caption':'Monstre du mur','src': require('./img/data/thumbs/wall_monster.jpg')},
+          {'id':17,'caption':'Assemblage de guerre','src': require('./img/data/thumbs/warboy.jpg')},
+          {'id':18,'caption':'Baleine','src': require('./img/data/thumbs/whale.jpg')}
+        ]
+      },
       currentImage: 0,
-      lightboxIsOpen: false
+      lightboxIsOpen: false,
+      container: '.Grid-container'
     }
 
     this.handleScroll = this.handleScroll.bind(this);
@@ -61,14 +133,21 @@ class App extends Component {
       var number = 5;
     }
 
-    fetch('/getImages.php?offset=0&count='+number+'&category='+slug).then(function(response){
-        return response.json();
-    }).then(data => {
-      console.log(data);
-      this.setState({
-          gridItems: data
-      })
-    })
+    var data = this.state.imagesData[slug];
+    console.log(data);
+    this.setState({
+        gridItems: data
+    });
+
+    this.setState({
+        isotope: new Isotope(
+          this.state.container,
+          {
+            layoutMode: 'packery',
+            itemSelector : '.Grid-item'
+        })
+    });
+    
   }
 
   componentDidMount(){
@@ -134,7 +213,6 @@ class App extends Component {
           gotoNextLightboxImage={this.gotoNextLightboxImage}
         />
         <Grid items={this.state.gridItems} itemClickHandler={this.openLightbox}/>
-        <ContactForm/>
         <Footer links={this.state.footerLinks}/>
       </div>
     );
@@ -246,21 +324,18 @@ class Grid extends Component {
           <div className="Grid-container">
             <div className="Grid-block">
               {this.props.items.map(function(item, index) {
-
                   return (
                       <div key={item.id} className="Grid-item"><div className="Grid-item-inner" onClick={(e) => Component.itemClickHandler(index,e)}><img alt="Eye" src={item.src}/></div></div>
                   );
               })}
             </div>
           </div>
-          <div className="Grid-btn-container">
-            <a className="Btn highlight" href="#" onClick={this.loadMore} ><span>+ de dessins</span></a>
-          </div>
         </div>
       </div>
     );
   }
-  componentDidMount() {
+
+  buildIsotopeGrid() {
     console.log(this.state.isotope);
     if(!this.state.isotope) {
         this.setState({
@@ -274,6 +349,9 @@ class Grid extends Component {
     } else {
         this.state.isotope.reloadItems();
     }
+  }
+  componentDidMount() {
+    this.buildIsotopeGrid();
   }
 }
 export default App;

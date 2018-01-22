@@ -51,23 +51,24 @@
 			}
 		}
 
-		.Grid-block &:nth-child(2){
+		.Grid-block &:nth-child(5n+2){
 			width: 747px;
 			padding-right: 0px;
 		}
 
-		.Grid-block &:nth-child(3){
+
+		.Grid-block &:nth-child(5n+3){
 			width: 555px;
 			height: 400px;
 		}
 
-		.Grid-block &:nth-child(4){
+		.Grid-block &:nth-child(5n+4){
 			width: 553px;
 			height: 832px;
 			padding-right: 0px;
 		}
 
-		.Grid-block &:nth-child(5){
+		.Grid-block &:nth-child(5n+5){
 			width: 555px;
 			height: 400px;
 		}

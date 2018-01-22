@@ -30,13 +30,7 @@ class Footer extends Component {
     return (
       <div className="Footer">
         <div className="Footer-inner">
-        	<nav className="Footer-nav">
-        	  {this.props.links.map(function(link) {
-                return (
-                    <FooterLink key={link.id} link={link} />
-                );
-            })}
-        	</nav>
+        	  © Frigo 2018, ouais ouais
         </div>
       </div>
     );

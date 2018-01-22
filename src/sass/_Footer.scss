@@ -1,9 +1,12 @@
 .Footer {
 	height: 120px;
+	line-height: 120px;
+	color: $white;
 	background: $black;
 
 	&-inner{
 		width: 1140px;
+		height: 100%;
 		margin: 0 auto;
 		text-align: center;
 	}
