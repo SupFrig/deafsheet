@@ -6,6 +6,10 @@
 	left: 0px;
 	width: 100%;
 
+	@media screen and (max-width: $desktop-bp) {
+		position: fixed;
+	}
+
 	&-inner {
 		width: 1140px;
 		margin: 0 auto;
@@ -24,6 +28,12 @@
 		display: inline-block;
 		transition: $animation-300;
 		-webkit-transition: $animation-300;
+		cursor: pointer;
+
+		@media screen and (max-width: $desktop-bp) {
+			display: block;
+			margin: 5% auto;
+		}
 	}
 
 	&-nav {

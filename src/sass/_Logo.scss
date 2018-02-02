@@ -8,6 +8,7 @@
   overflow: hidden;
   background-size: 70%;
   
+
   &-container {
     width: 500px;
     height: 500px;
@@ -16,6 +17,11 @@
     overflow: hidden;
     zoom: .5;
     display: inline-block;
+
+    @media screen and (max-width: $desktop-bp) {
+      margin: 0 auto;
+      display: block;
+    }
   }
   
   &-bg {

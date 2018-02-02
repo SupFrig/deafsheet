@@ -9,15 +9,29 @@ class HeaderLink extends Component {
   }
 
   clickEvent(e) {
-    
     //e.preventDefault();
-    
-    //this.clickAnimation();
+    this.clickAnimation();
   }
 
   clickAnimation() {
-    console.log('animate');
+
+    function scrollTo(element, to, duration) {
+      console.log('in');
+      if (duration <= 0) return;
+      var difference = to - element.scrollTop;
+      var perTick = difference / duration * 10;
+
+      setTimeout(function() {
+        element.scrollTop = element.scrollTop + perTick;
+        if (element.scrollTop == to) return;
+        scrollTo(element, to, duration - 10);
+      }, 10);
+    }
+
+    scrollTo(document.querySelector('html'), 500, 300);
   }
+
+
 
   render () {
     var link = this.props.link;
@@ -39,7 +53,7 @@ class Header extends Component {
     return (
       <div className="Header">
         <div className="Header-inner">
-        	<img className="Header-logo" alt={this.props.title} src={logoDisplay}/>
+        	<a href="http://deafsheet.fr"><img className="Header-logo" alt={this.props.title} src={logoDisplay}/></a>
         	<nav className="Header-nav">
         	  {this.props.links.map(function(link) {
                 return (

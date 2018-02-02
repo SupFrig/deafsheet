@@ -53,6 +53,7 @@
   },
   "devDependencies": {
     "node-sass": "^4.5.3",
+    "react-images-loaded": "^1.1.0",
     "sass-loader": "^6.0.6"
   },
   "jest": {

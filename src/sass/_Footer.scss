@@ -9,6 +9,10 @@
 		height: 100%;
 		margin: 0 auto;
 		text-align: center;
+
+		@media screen and (max-width: $desktop-bp) {
+			width: 100%;
+		}
 	}
 
 	&-link {

@@ -9,7 +9,6 @@ import Footer from './react-components/Footer'
 
 import './App.scss';
 
-import eyeman from './img/data/thumbs/bigeyeman.jpg';
 import animatedLogoEye from './img/skin/eye.png';
 
 class App extends Component {
@@ -121,9 +120,10 @@ class App extends Component {
 
   handleHash () {
     var hash = window.location.hash.replace('#','');
-    console.log('current hash',hash);
 
-    this.updateGridItems(hash,5);
+    if(hash.length > 0){
+      this.updateGridItems(hash,5);
+    }
 
     
   }
@@ -139,19 +139,28 @@ class App extends Component {
         gridItems: data
     });
 
-    this.setState({
-        isotope: new Isotope(
-          this.state.container,
-          {
-            layoutMode: 'packery',
-            itemSelector : '.Grid-item'
-        })
-    });
-    
+    var width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+
+    if(width >= 1140){
+      this.setState({
+          isotope: new Isotope(
+            this.state.container,
+            {
+              layoutMode: 'packery',
+              itemSelector : '.Grid-item'
+          })
+      });
+    }
   }
 
   componentDidMount(){
+
+    //set site title
+    document.title = "Deafsheet";
+    this.handleResize();
     window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('resize', this.handleResize);
+    //this.handleHash();
     window.addEventListener('hashchange', this.handleHash);
   }
 
@@ -186,6 +195,12 @@ class App extends Component {
     });
   }
 
+  handleResize() {
+    var headerHeight = document.querySelector('.Header').offsetHeight + 'px';
+    var container = document.querySelector('.Container');
+    container.style.paddingTop = headerHeight;
+  }
+
   handleScroll() {
     var doc = document.documentElement;
     var value = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
@@ -202,7 +217,7 @@ class App extends Component {
     return (
       <div className={classes}>
         <Header links={this.state.headerLinks} sticky={this.state.sticky} title="Deafsheet"/>
-        <Disclaimer text="Sur ce site il y a des dessins. Vous pouvez les regarder, les partager, les colorier (après impression) et les utiliser comme bon vous semble.  Si vous me laissez un petit merci c'est plus gentil :)"/>
+        <Disclaimer text="Les petits dessins de SuperFrigo. Vous pouvez en disposer comme bon vous semble, tout comme vous pouvez prendre la liberté de m'en informer sur l'adresse e-mail deafsheet@gmail.com. Bon visionnage :)"/>
         <Popin 
           images={this.state.gridItems} 
           currentImage={this.state.currentImage} 
@@ -336,18 +351,21 @@ class Grid extends Component {
   }
 
   buildIsotopeGrid() {
-    console.log(this.state.isotope);
-    if(!this.state.isotope) {
-        this.setState({
-            isotope: new Isotope(
-              this.state.container,
-              {
-                layoutMode: 'packery',
-                itemSelector : '.Grid-item'
-            })
-        });
-    } else {
-        this.state.isotope.reloadItems();
+    var width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+
+    if(width >= 1140){
+      if(!this.state.isotope) {
+          this.setState({
+              isotope: new Isotope(
+                this.state.container,
+                {
+                  layoutMode: 'packery',
+                  itemSelector : '.Grid-item'
+              })
+          });
+      } else {
+          this.state.isotope.reloadItems();
+      }
     }
   }
   componentDidMount() {
