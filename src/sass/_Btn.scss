@@ -13,6 +13,10 @@
 	transition: $animation-300;
 	-webkit-transition: $animation-300;
 
+	@media screen and (max-width: $desktop-bp) {
+		font-size: 15px;
+	}
+
 	span {
 		z-index: 1;
 		position: relative;

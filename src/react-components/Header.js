@@ -16,7 +16,6 @@ class HeaderLink extends Component {
   clickAnimation() {
 
     function scrollTo(element, to, duration) {
-      console.log('in');
       if (duration <= 0) return;
       var difference = to - element.scrollTop;
       var perTick = difference / duration * 10;
