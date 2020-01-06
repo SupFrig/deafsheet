@@ -1,0 +1,25 @@
+.Disclaimer {
+
+	&-inner {
+		width: 1140px;
+		margin: 0 auto;
+		padding: 40px 0px;
+
+		@media screen and (max-width: $desktop-bp) {
+			width: 100%;
+		}
+
+		p {
+			line-height: 44px;
+			display: inline-block;
+			vertical-align: top;
+			width: 850px;
+			padding-left: 30px;
+
+			@media screen and (max-width: $desktop-bp) {
+				width: 90%;
+				padding: 0px 5%;
+			}
+		}
+	}
+}
