@@ -26,7 +26,7 @@ class HeaderLink extends Component {
         scrollTo(element, to, duration - 10);
       }, 10);
     }
-
+    
     scrollTo(document.querySelector('html'), 500, 300);
   }
 

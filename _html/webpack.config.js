@@ -1,6 +1,9 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpack = require('webpack');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
+  devtool: '',
   entry : "./src/js/App.js",
   output: {
     filename: "./js/bundle.js"
@@ -30,6 +33,11 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'css/styles.css',
+    }),
+    new webpack.optimize.ModuleConcatenationPlugin(),
+    new BundleAnalyzerPlugin(),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production')
     }),
   ]
 };

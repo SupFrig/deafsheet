@@ -21,10 +21,8 @@ class Grid extends Component {
   }
 
   itemClickHandler(index,e) {
-    if (typeof this.props.itemClickHandler === 'function') {
-      this.props.itemClickHandler(index,e);{item.caption}{item.caption}
+      this.props.itemClickHandler(index,e);
       this.forceUpdate();
-    }
   }
 
   render() {
